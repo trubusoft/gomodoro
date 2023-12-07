@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cqptx1v8yuy1g"]
+
+[ext_resource type="FontFile" uid="uid://brvbesy3yluox" path="res://assets/fonts/Ubuntu-Bold.ttf" id="1_j78hs"]
+
+[resource]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/font_sizes/font_size = 90
+Label/fonts/font = ExtResource("1_j78hs")
