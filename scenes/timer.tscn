@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj3pykbdj6fvp"]
+
+[ext_resource type="Theme" uid="uid://cqptx1v8yuy1g" path="res://assets/themes/timer.tres" id="1_btyi1"]
+[ext_resource type="Script" path="res://scenes/timer.gd" id="1_u3eqq"]
+
+[node name="Timer" type="Control"]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+script = ExtResource("1_u3eqq")
+wait_time_in_seconds = 600
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 114.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_btyi1")
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="LabelMinute" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "09"
+
+[node name="LabelSeparation" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = ":"
+
+[node name="LabelSecond" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "59"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ButtonStart" type="Button" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Start"
+
+[node name="ButtonSkip" type="Button" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Skip >"
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/ButtonStart" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/ButtonSkip" to="." method="_on_button_skip_pressed"]
