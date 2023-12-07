@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://hnceblfwslk0"]
+[gd_scene load_steps=4 format=3 uid="uid://hnceblfwslk0"]
 
 [ext_resource type="Theme" uid="uid://bwe26ukrmi3ab" path="res://assets/themes/task_list.tres" id="1_00im7"]
 [ext_resource type="PackedScene" uid="uid://i3kxbci3lska" path="res://scenes/task.tscn" id="1_uhejc"]
+[ext_resource type="PackedScene" uid="uid://bccn6f3mmd31a" path="res://components/common_margin_container.tscn" id="2_mwuer"]
 
 [node name="TaskList" type="Control"]
 layout_mode = 3
@@ -10,32 +11,25 @@ anchor_right = 1.0
 grow_horizontal = 2
 theme = ExtResource("1_00im7")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="CommonMarginContainer" parent="." instance=ExtResource("2_mwuer")]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 45.0
-grow_horizontal = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+offset_bottom = 120.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CommonMarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 25
 
-[node name="Task" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
+[node name="Task" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
 layout_mode = 2
 
-[node name="Task2" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
+[node name="Task2" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
 layout_mode = 2
 
-[node name="Task3" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
+[node name="Task3" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
 layout_mode = 2
 
-[node name="Task4" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
+[node name="Task4" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
 layout_mode = 2
 
-[node name="Task5" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
+[node name="Task5" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
 layout_mode = 2
