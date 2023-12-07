@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://dk0k5x8mb7cg"]
+
+[ext_resource type="Texture2D" uid="uid://b1uwfmxk2ip3p" path="res://assets/image/tomato_mock.jpg" id="1_u48g5"]
+[ext_resource type="Theme" uid="uid://dis4l2khc77s3" path="res://assets/themes/title_bar.tres" id="2_elrw4"]
+[ext_resource type="Texture2D" uid="uid://dx5i0l28n8b8w" path="res://assets/image/gear_mock.png" id="2_qvl55"]
+
+[node name="TitleBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_elrw4")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 39.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="ApplicationIcon" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_u48g5")
+expand_mode = 2
+
+[node name="ApplicationName" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Gomodoro"
+
+[node name="SettingsButton" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_qvl55")
+expand_mode = 2
