@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfb781sx38kqn"]
+
+[ext_resource type="PackedScene" uid="uid://hnceblfwslk0" path="res://scenes/task_list.tscn" id="1_ltetu"]
+[ext_resource type="PackedScene" uid="uid://dk0k5x8mb7cg" path="res://scenes/title_bar.tscn" id="1_vhjw5"]
+[ext_resource type="PackedScene" uid="uid://dj3pykbdj6fvp" path="res://scenes/timer.tscn" id="2_ipckq"]
+
+[node name="Gomodoro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.733333, 0.211765, 0.266667, 0.54902)
+
+[node name="TitleBar" parent="." instance=ExtResource("1_vhjw5")]
+layout_mode = 1
+anchors_preset = 10
+anchor_bottom = 0.0
+grow_vertical = 1
+
+[node name="Timer" parent="." instance=ExtResource("2_ipckq")]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.081448
+anchor_bottom = 0.081448
+metadata/_edit_use_anchors_ = true
+
+[node name="TaskList" parent="." instance=ExtResource("1_ltetu")]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.282051
+anchor_bottom = 0.282051
