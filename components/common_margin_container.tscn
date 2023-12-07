@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bccn6f3mmd31a"]
+
+[node name="CommonMarginContainer" type="MarginContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
