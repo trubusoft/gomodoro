@@ -14,6 +14,10 @@ config/name="Gomodoro"
 run/main_scene="res://scenes/gomodoro.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 
+[autoload]
+
+GlobalUtilities="*res://globals/global_utilities.gd"
+
 [display]
 
 window/size/viewport_width=620
