@@ -46,84 +46,94 @@ tab_alignment = 1
 [node name="Focus" type="Control" parent="CommonMarginContainer/TabContainer"]
 layout_mode = 2
 
-[node name="LabelFocus" type="Label" parent="CommonMarginContainer/TabContainer/Focus"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CommonMarginContainer/TabContainer/Focus"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -46.5
-offset_top = 32.0
-offset_right = 46.5
-offset_bottom = 55.0
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
 grow_horizontal = 2
+
+[node name="Spacer1" type="MarginContainer" parent="CommonMarginContainer/TabContainer/Focus/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 30
+
+[node name="LabelFocus" type="Label" parent="CommonMarginContainer/TabContainer/Focus/VBoxContainer"]
+layout_mode = 2
 text = "Focus Mode"
 
-[node name="FocusTimer" parent="CommonMarginContainer/TabContainer/Focus" instance=ExtResource("2_ipckq")]
+[node name="Spacer2" type="MarginContainer" parent="CommonMarginContainer/TabContainer/Focus/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="FocusTimer" parent="CommonMarginContainer/TabContainer/Focus/VBoxContainer" instance=ExtResource("2_ipckq")]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -46.5
-offset_top = 65.0
-offset_right = 46.5
-offset_bottom = 88.0
+layout_mode = 2
+size_flags_horizontal = 4
 wait_time_in_minutes = 25
 
 [node name="Break" type="Control" parent="CommonMarginContainer/TabContainer"]
 visible = false
 layout_mode = 2
 
-[node name="LabelBreak" type="Label" parent="CommonMarginContainer/TabContainer/Break"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CommonMarginContainer/TabContainer/Break"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -47.0
-offset_top = 32.0
-offset_right = 47.0
-offset_bottom = 55.0
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
 grow_horizontal = 2
+
+[node name="Spacer1" type="MarginContainer" parent="CommonMarginContainer/TabContainer/Break/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 30
+
+[node name="LabelBreak" type="Label" parent="CommonMarginContainer/TabContainer/Break/VBoxContainer"]
+layout_mode = 2
 text = "Break Mode"
 
-[node name="BreakTimer" parent="CommonMarginContainer/TabContainer/Break" instance=ExtResource("2_ipckq")]
+[node name="Spacer2" type="MarginContainer" parent="CommonMarginContainer/TabContainer/Break/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="BreakTimer" parent="CommonMarginContainer/TabContainer/Break/VBoxContainer" instance=ExtResource("2_ipckq")]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -47.0
-offset_top = 65.0
-offset_right = 47.0
-offset_bottom = 88.0
+layout_mode = 2
 wait_time_in_minutes = 5
 
 [node name="LongBreak" type="Control" parent="CommonMarginContainer/TabContainer"]
 visible = false
 layout_mode = 2
 
-[node name="LabelLongBreak" type="Label" parent="CommonMarginContainer/TabContainer/LongBreak"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CommonMarginContainer/TabContainer/LongBreak"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -67.5
-offset_top = 32.0
 offset_right = 67.5
-offset_bottom = 55.0
+offset_bottom = 75.0
 grow_horizontal = 2
+
+[node name="Spacer1" type="MarginContainer" parent="CommonMarginContainer/TabContainer/LongBreak/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 30
+
+[node name="LabelLongBreak" type="Label" parent="CommonMarginContainer/TabContainer/LongBreak/VBoxContainer"]
+layout_mode = 2
 text = "Long Break Mode"
 
-[node name="LongBreakTimer" parent="CommonMarginContainer/TabContainer/LongBreak" instance=ExtResource("2_ipckq")]
+[node name="Spacer2" type="MarginContainer" parent="CommonMarginContainer/TabContainer/LongBreak/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="LongBreakTimer" parent="CommonMarginContainer/TabContainer/LongBreak/VBoxContainer" instance=ExtResource("2_ipckq")]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -67.5
-offset_top = 65.0
-offset_right = 67.5
-offset_bottom = 88.0
+layout_mode = 2
 wait_time_in_minutes = 15
 
 [connection signal="tab_changed" from="CommonMarginContainer/TabContainer" to="." method="_on_tab_container_tab_changed"]
