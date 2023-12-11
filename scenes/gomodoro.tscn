@@ -40,6 +40,7 @@ offset_top = 59.0
 offset_bottom = 110.0
 
 [node name="TabContainer" type="TabContainer" parent="CommonMarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 tab_alignment = 1
 
@@ -72,7 +73,6 @@ theme_override_constants/margin_bottom = 10
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
-wait_time_in_minutes = 25
 
 [node name="Break" type="Control" parent="CommonMarginContainer/TabContainer"]
 visible = false
@@ -103,7 +103,7 @@ theme_override_constants/margin_bottom = 10
 [node name="BreakTimer" parent="CommonMarginContainer/TabContainer/Break/VBoxContainer" instance=ExtResource("2_ipckq")]
 unique_name_in_owner = true
 layout_mode = 2
-wait_time_in_minutes = 5
+timer_mode = 1
 
 [node name="LongBreak" type="Control" parent="CommonMarginContainer/TabContainer"]
 visible = false
@@ -134,6 +134,6 @@ theme_override_constants/margin_bottom = 10
 [node name="LongBreakTimer" parent="CommonMarginContainer/TabContainer/LongBreak/VBoxContainer" instance=ExtResource("2_ipckq")]
 unique_name_in_owner = true
 layout_mode = 2
-wait_time_in_minutes = 15
+timer_mode = 2
 
 [connection signal="tab_changed" from="CommonMarginContainer/TabContainer" to="." method="_on_tab_container_tab_changed"]
