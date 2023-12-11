@@ -137,3 +137,6 @@ layout_mode = 2
 timer_mode = 2
 
 [connection signal="tab_changed" from="CommonMarginContainer/TabContainer" to="." method="_on_tab_container_tab_changed"]
+[connection signal="timer_skipped" from="CommonMarginContainer/TabContainer/Focus/VBoxContainer/FocusTimer" to="." method="_on_timer_skipped"]
+[connection signal="timer_skipped" from="CommonMarginContainer/TabContainer/Break/VBoxContainer/BreakTimer" to="." method="_on_timer_skipped"]
+[connection signal="timer_skipped" from="CommonMarginContainer/TabContainer/LongBreak/VBoxContainer/LongBreakTimer" to="." method="_on_timer_skipped"]
