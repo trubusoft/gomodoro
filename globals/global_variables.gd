@@ -1,5 +1,12 @@
 extends Node
 
+# timer mode enum
+enum TIMER_MODE {
+	FOCUS, 
+	BREAK, 
+	LONG_BREAK
+}
+
 # focus
 var FOCUS_TIME_IN_MINUTE: int = 25
 var focus_time_pointer: int
