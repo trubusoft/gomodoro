@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfb781sx38kqn"]
+[gd_scene load_steps=6 format=3 uid="uid://dfb781sx38kqn"]
 
 [ext_resource type="PackedScene" uid="uid://hnceblfwslk0" path="res://scenes/task_list.tscn" id="1_ltetu"]
 [ext_resource type="PackedScene" uid="uid://dk0k5x8mb7cg" path="res://scenes/title_bar.tscn" id="1_vhjw5"]
+[ext_resource type="Script" path="res://scenes/gomodoro.gd" id="1_vv87t"]
 [ext_resource type="PackedScene" uid="uid://dj3pykbdj6fvp" path="res://scenes/timer.tscn" id="2_ipckq"]
+[ext_resource type="PackedScene" uid="uid://bccn6f3mmd31a" path="res://components/common_margin_container.tscn" id="4_hhovm"]
 
 [node name="Gomodoro" type="Control"]
 layout_mode = 3
@@ -11,8 +13,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vv87t")
 
 [node name="BackgroundRect" type="ColorRect" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,19 +27,103 @@ color = Color(0.733333, 0.211765, 0.266667, 0.54902)
 
 [node name="TitleBar" parent="." instance=ExtResource("1_vhjw5")]
 layout_mode = 1
-anchors_preset = 10
-anchor_bottom = 0.0
-grow_vertical = 1
-
-[node name="Timer" parent="." instance=ExtResource("2_ipckq")]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.081448
-anchor_bottom = 0.081448
-metadata/_edit_use_anchors_ = true
 
 [node name="TaskList" parent="." instance=ExtResource("1_ltetu")]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.282051
 anchor_bottom = 0.282051
+
+[node name="CommonMarginContainer" parent="." instance=ExtResource("4_hhovm")]
+layout_mode = 1
+offset_top = 59.0
+offset_bottom = 110.0
+
+[node name="TabContainer" type="TabContainer" parent="CommonMarginContainer"]
+layout_mode = 2
+tab_alignment = 1
+
+[node name="Focus" type="Control" parent="CommonMarginContainer/TabContainer"]
+layout_mode = 2
+
+[node name="LabelFocus" type="Label" parent="CommonMarginContainer/TabContainer/Focus"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -46.5
+offset_top = 32.0
+offset_right = 46.5
+offset_bottom = 55.0
+grow_horizontal = 2
+text = "Focus Mode"
+
+[node name="FocusTimer" parent="CommonMarginContainer/TabContainer/Focus" instance=ExtResource("2_ipckq")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -46.5
+offset_top = 65.0
+offset_right = 46.5
+offset_bottom = 88.0
+wait_time_in_minutes = 25
+
+[node name="Break" type="Control" parent="CommonMarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="LabelBreak" type="Label" parent="CommonMarginContainer/TabContainer/Break"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -47.0
+offset_top = 32.0
+offset_right = 47.0
+offset_bottom = 55.0
+grow_horizontal = 2
+text = "Break Mode"
+
+[node name="BreakTimer" parent="CommonMarginContainer/TabContainer/Break" instance=ExtResource("2_ipckq")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -47.0
+offset_top = 65.0
+offset_right = 47.0
+offset_bottom = 88.0
+wait_time_in_minutes = 5
+
+[node name="LongBreak" type="Control" parent="CommonMarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="LabelLongBreak" type="Label" parent="CommonMarginContainer/TabContainer/LongBreak"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -67.5
+offset_top = 32.0
+offset_right = 67.5
+offset_bottom = 55.0
+grow_horizontal = 2
+text = "Long Break Mode"
+
+[node name="LongBreakTimer" parent="CommonMarginContainer/TabContainer/LongBreak" instance=ExtResource("2_ipckq")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -67.5
+offset_top = 65.0
+offset_right = 67.5
+offset_bottom = 88.0
+wait_time_in_minutes = 15
+
+[connection signal="tab_changed" from="CommonMarginContainer/TabContainer" to="." method="_on_tab_container_tab_changed"]
