@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfb781sx38kqn"]
+[gd_scene load_steps=7 format=3 uid="uid://dfb781sx38kqn"]
 
 [ext_resource type="PackedScene" uid="uid://hnceblfwslk0" path="res://scenes/task_list.tscn" id="1_ltetu"]
 [ext_resource type="PackedScene" uid="uid://dk0k5x8mb7cg" path="res://scenes/title_bar.tscn" id="1_vhjw5"]
 [ext_resource type="Script" path="res://scenes/gomodoro.gd" id="1_vv87t"]
 [ext_resource type="PackedScene" uid="uid://dj3pykbdj6fvp" path="res://scenes/timer.tscn" id="2_ipckq"]
 [ext_resource type="PackedScene" uid="uid://bccn6f3mmd31a" path="res://components/common_margin_container.tscn" id="4_hhovm"]
+[ext_resource type="Theme" uid="uid://cliksffx0va4j" path="res://assets/themes/tab_container.tres" id="5_a57tv"]
 
 [node name="Gomodoro" type="Control"]
 layout_mode = 3
@@ -42,6 +43,7 @@ offset_bottom = 110.0
 [node name="TabContainer" type="TabContainer" parent="CommonMarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("5_a57tv")
 tab_alignment = 1
 
 [node name="Focus" type="Control" parent="CommonMarginContainer/TabContainer"]
