@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dk0k5x8mb7cg"]
 
-[ext_resource type="Texture2D" uid="uid://b1uwfmxk2ip3p" path="res://assets/image/tomato_mock.jpg" id="1_u48g5"]
 [ext_resource type="PackedScene" uid="uid://bccn6f3mmd31a" path="res://components/common_margin_container.tscn" id="2_5qlh5"]
 [ext_resource type="Theme" uid="uid://dis4l2khc77s3" path="res://assets/themes/title_bar.tres" id="2_elrw4"]
-[ext_resource type="Texture2D" uid="uid://dx5i0l28n8b8w" path="res://assets/image/gear_mock.png" id="2_qvl55"]
+[ext_resource type="Texture2D" uid="uid://ci6snr35x6cpc" path="res://assets/image/tomato_icon.png" id="3_73ugd"]
+[ext_resource type="Texture2D" uid="uid://bqer2y0u1lbja" path="res://assets/image/gear_icon.png" id="4_atntl"]
 
 [node name="TitleBar" type="Control"]
 layout_mode = 3
@@ -23,7 +23,7 @@ alignment = 1
 
 [node name="ApplicationIcon" type="TextureRect" parent="CommonMarginContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_u48g5")
+texture = ExtResource("3_73ugd")
 expand_mode = 2
 
 [node name="ApplicationName" type="Label" parent="CommonMarginContainer/HBoxContainer"]
@@ -32,5 +32,5 @@ text = "Gomodoro"
 
 [node name="SettingsButton" type="TextureRect" parent="CommonMarginContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_qvl55")
+texture = ExtResource("4_atntl")
 expand_mode = 2
