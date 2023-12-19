@@ -1,14 +1,35 @@
 extends Control
 
 
-signal toggle_check(supplied_check: bool)
+signal toggle_check(toggled_on: bool)
 
 
-# Called when the node enters the scene tree for the first time.
+@onready var task = $"."
+@onready var panel = %Panel
+@onready var margin_container = %MarginContainer
+@onready var check_box = %CheckBox
+
+
+var grow_size = 100
+
+
+func toggle_expand_panel(toggled_on: bool):
+	if toggled_on:
+		task.custom_minimum_size.y += grow_size
+		panel.size.y += grow_size
+	else:
+		task.custom_minimum_size.y -= grow_size
+		panel.size.y -= grow_size
+
+
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
+
+
+func _on_check_box_toggled(toggled_on):
+	toggle_check.emit(toggled_on)
+	toggle_expand_panel(toggled_on)
