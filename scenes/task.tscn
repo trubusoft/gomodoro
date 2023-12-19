@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://i3kxbci3lska"]
+[gd_scene load_steps=3 format=3 uid="uid://i3kxbci3lska"]
 
 [ext_resource type="Script" path="res://scenes/task.gd" id="1_eoqju"]
+[ext_resource type="Theme" uid="uid://crpdu1rms2y2i" path="res://assets/themes/check_box.tres" id="2_wdb3e"]
 
 [node name="Task" type="Control"]
 layout_mode = 3
@@ -10,23 +11,30 @@ grow_horizontal = 2
 size_flags_vertical = 4
 script = ExtResource("1_eoqju")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 41.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
 layout_mode = 0
-offset_right = 40.0
+offset_right = 116.0
 offset_bottom = 40.0
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Check" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="CheckBox" type="CheckBox" parent="Panel/MarginContainer/HBoxContainer"]
 layout_mode = 2
-text = "V"
+theme = ExtResource("2_wdb3e")
 
-[node name="TaskName" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="TaskName" type="Label" parent="Panel/MarginContainer/HBoxContainer"]
 layout_mode = 2
 text = "Task Name"
