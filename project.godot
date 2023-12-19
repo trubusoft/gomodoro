@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.2", "GL Compatibility")
 
 GlobalUtilities="*res://globals/global_utilities.gd"
 GlobalVariables="*res://globals/global_variables.gd"
+GlobalAudioPlayer="*res://globals/global_audio_player.tscn"
 
 [display]
 
