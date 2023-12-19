@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dw5g2ilnblo0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ck0qo"]
+
+[resource]
+TextEdit/styles/focus = SubResource("StyleBoxEmpty_ck0qo")

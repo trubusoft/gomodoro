@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://i3kxbci3lska"]
+[gd_scene load_steps=5 format=3 uid="uid://i3kxbci3lska"]
 
 [ext_resource type="Script" path="res://scenes/task.gd" id="1_eoqju"]
 [ext_resource type="Theme" uid="uid://crpdu1rms2y2i" path="res://assets/themes/check_box.tres" id="2_wdb3e"]
 [ext_resource type="Texture2D" uid="uid://bpmktspvbiw4c" path="res://assets/image/manuscript_icon.png" id="3_xtikf"]
+[ext_resource type="Theme" uid="uid://dw5g2ilnblo0" path="res://assets/themes/text_edit.tres" id="4_ff5y2"]
 
 [node name="Task" type="Control"]
 layout_mode = 3
@@ -62,6 +63,7 @@ unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+theme = ExtResource("4_ff5y2")
 text = "asd"
 wrap_mode = 1
 
