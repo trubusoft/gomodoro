@@ -8,6 +8,7 @@ signal toggle_check(toggled_on: bool)
 @onready var panel = %Panel
 @onready var margin_container = %MarginContainer
 @onready var check_box = %CheckBox
+@onready var task_description = %TaskDescription
 
 
 var is_panel_expanded = false
@@ -19,10 +20,12 @@ func toggle_expand_panel():
 		is_panel_expanded = true
 		task.custom_minimum_size.y += grow_size
 		panel.size.y += grow_size
+		task_description.visible = true
 	elif is_panel_expanded == true:
 		is_panel_expanded = false
 		task.custom_minimum_size.y -= grow_size
 		panel.size.y -= grow_size
+		task_description.visible = false
 
 
 func _ready():
