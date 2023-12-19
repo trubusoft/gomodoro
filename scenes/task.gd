@@ -12,7 +12,7 @@ signal toggle_check(toggled_on: bool)
 
 
 var is_panel_expanded = false
-var grow_size = 100
+var grow_size = 200
 
 
 func toggle_expand_panel():
@@ -21,6 +21,7 @@ func toggle_expand_panel():
 		task.custom_minimum_size.y += grow_size
 		panel.size.y += grow_size
 		task_description.visible = true
+		task_description.custom_minimum_size.y = grow_size # deliberately setto grow_size
 	elif is_panel_expanded == true:
 		is_panel_expanded = false
 		task.custom_minimum_size.y -= grow_size
