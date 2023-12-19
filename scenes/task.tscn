@@ -64,7 +64,6 @@ visible = false
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme = ExtResource("4_ff5y2")
-text = "asd"
 wrap_mode = 1
 
 [connection signal="gui_input" from="Panel" to="." method="_on_panel_gui_input"]
