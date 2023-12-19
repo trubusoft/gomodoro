@@ -107,9 +107,13 @@ func _on_button_start_pressed():
 		start_timer()
 	else:
 		pause_timer()
+	
+	GlobalAudioPlayer.play_click()
 
 
 func _on_button_skip_pressed():
 	# emit this signal to be caught by gomodoro.gd
 	timer_skipped.emit()
+	
+	GlobalAudioPlayer.play_click()
 
