@@ -19,7 +19,7 @@ offset_bottom = 120.0
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="Task" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
+[node name="Task1" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
 layout_mode = 2
 
 [node name="Task2" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
@@ -32,4 +32,22 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Task5" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
+layout_mode = 2
+
+[node name="Task6" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
+layout_mode = 2
+
+[node name="Task7" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
+layout_mode = 2
+
+[node name="Task8" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
+layout_mode = 2
+
+[node name="Task9" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
+layout_mode = 2
+
+[node name="Task10" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
+layout_mode = 2
+
+[node name="Task11" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
 layout_mode = 2
