@@ -9,6 +9,7 @@ signal toggle_check(toggled_on: bool)
 @onready var margin_container = %MarginContainer
 @onready var check_box = %CheckBox
 @onready var task_description = %TaskDescription
+@onready var content_icon = $Panel/MarginContainer/VBoxContainer/HBoxContainer/ContentIcon
 
 
 var is_panel_expanded = false
@@ -50,3 +51,12 @@ func _on_check_box_toggled(toggled_on):
 func _on_panel_gui_input(event):
 	if is_click(event):
 		toggle_expand_panel()
+
+
+func _on_task_description_text_changed():
+	var new_text_description_length = len(task_description.text.strip_escapes())
+	if new_text_description_length > 5:
+		content_icon.visible = true
+	else:
+		content_icon.visible = false
+
