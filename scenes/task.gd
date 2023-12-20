@@ -36,7 +36,7 @@ func _on_check_box_toggled(toggled_on):
 	toggle_check.emit(toggled_on)
 
 
-func _on_panel_gui_input(event):
+func _on_panel_gui_input(_event):
 	if Input.is_action_just_released("left_click") and is_being_pointed:
 		toggle_expand_panel()
 
