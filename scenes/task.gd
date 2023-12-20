@@ -30,14 +30,6 @@ func toggle_expand_panel():
 		task_description.visible = false
 
 
-func _ready():
-	pass
-
-
-func _process(_delta):
-	pass
-
-
 func is_click(event) -> bool:
 	if event is InputEventMouseButton and event.button_index == 1 and event.pressed == true:
 		return true
