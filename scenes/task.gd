@@ -2,6 +2,8 @@ extends Control
 
 
 signal toggle_check(toggled_on: bool)
+signal move_up(node: Node, index: int)
+signal move_down(node: Node, index: int)
 
 
 @onready var task = $"."
@@ -55,3 +57,12 @@ func _on_panel_mouse_entered():
 
 func _on_panel_mouse_exited():
 	is_being_pointed = false
+
+
+func _on_move_up_button_pressed():
+	emit_signal('move_up', self, get_index())
+
+
+func _on_move_down_button_pressed():
+	emit_signal('move_down', self, get_index())
+
