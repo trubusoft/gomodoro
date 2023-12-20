@@ -21,18 +21,26 @@ var grow_size = 200
 var is_being_pointed: bool = false
 
 
+func expand_panel():
+	is_panel_expanded = true
+	task.custom_minimum_size.y += grow_size
+	panel.size.y += grow_size
+	task_description.visible = true
+	task_description.custom_minimum_size.y = grow_size - 5 # deliberately set around grow_size
+
+
+func shrink_panel():
+	is_panel_expanded = false
+	task.custom_minimum_size.y -= grow_size
+	panel.size.y -= grow_size
+	task_description.visible = false
+
+
 func toggle_expand_panel():
 	if is_panel_expanded == false:
-		is_panel_expanded = true
-		task.custom_minimum_size.y += grow_size
-		panel.size.y += grow_size
-		task_description.visible = true
-		task_description.custom_minimum_size.y = grow_size - 5 # deliberately set around grow_size
+		expand_panel()
 	elif is_panel_expanded == true:
-		is_panel_expanded = false
-		task.custom_minimum_size.y -= grow_size
-		panel.size.y -= grow_size
-		task_description.visible = false
+		shrink_panel()
 
 
 func _on_check_box_toggled(toggled_on):
