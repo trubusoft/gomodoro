@@ -15,6 +15,8 @@ signal toggle_check(toggled_on: bool)
 var is_panel_expanded = false
 var grow_size = 200
 
+var is_being_pointed: bool = false
+
 
 func toggle_expand_panel():
 	if is_panel_expanded == false:
@@ -30,18 +32,12 @@ func toggle_expand_panel():
 		task_description.visible = false
 
 
-func is_clicked_down(event) -> bool:
-	if event is InputEventMouseButton and event.button_index == 1 and event.pressed == true:
-		return true
-	return false
-
-
 func _on_check_box_toggled(toggled_on):
 	toggle_check.emit(toggled_on)
 
 
 func _on_panel_gui_input(event):
-	if is_clicked_down(event):
+	if Input.is_action_just_released("left_click") and is_being_pointed:
 		toggle_expand_panel()
 
 
@@ -52,3 +48,10 @@ func _on_task_description_text_changed():
 	else:
 		content_icon.visible = false
 
+
+func _on_panel_mouse_entered():
+	is_being_pointed = true
+
+
+func _on_panel_mouse_exited():
+	is_being_pointed = false
