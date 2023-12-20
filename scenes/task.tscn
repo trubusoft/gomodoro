@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://i3kxbci3lska"]
+[gd_scene load_steps=6 format=3 uid="uid://i3kxbci3lska"]
 
 [ext_resource type="Script" path="res://scenes/task.gd" id="1_eoqju"]
 [ext_resource type="Theme" uid="uid://crpdu1rms2y2i" path="res://assets/themes/check_box.tres" id="2_wdb3e"]
 [ext_resource type="Theme" uid="uid://benld3o77ayl2" path="res://assets/themes/line_edit.tres" id="3_qhryt"]
 [ext_resource type="Texture2D" uid="uid://bpmktspvbiw4c" path="res://assets/image/manuscript_icon.png" id="3_xtikf"]
 [ext_resource type="Theme" uid="uid://dw5g2ilnblo0" path="res://assets/themes/text_edit.tres" id="4_ff5y2"]
-[ext_resource type="Texture2D" uid="uid://ro05830b60sq" path="res://assets/image/up_icon.png" id="5_c6jvl"]
-[ext_resource type="Texture2D" uid="uid://b43s2pfx3u7hb" path="res://assets/image/down_icon.png" id="6_ft00y"]
 
 [node name="Task" type="Control"]
 layout_mode = 3
@@ -66,26 +64,9 @@ flat = true
 [node name="ContentIcon" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 visible = false
 layout_mode = 2
+size_flags_horizontal = 10
 texture = ExtResource("3_xtikf")
 expand_mode = 2
-
-[node name="MoveUpButton" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(30, 30)
-layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 4
-texture_normal = ExtResource("5_c6jvl")
-ignore_texture_size = true
-stretch_mode = 4
-
-[node name="MoveDownButton" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(30, 30)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-texture_normal = ExtResource("6_ft00y")
-ignore_texture_size = true
-stretch_mode = 4
 
 [node name="TaskDescription" type="TextEdit" parent="Panel/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -100,6 +81,4 @@ wrap_mode = 1
 [connection signal="mouse_exited" from="Panel" to="." method="_on_panel_mouse_exited"]
 [connection signal="toggled" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="gui_input" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/TaskName" to="." method="_on_task_name_gui_input"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/MoveUpButton" to="." method="_on_move_up_button_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/MoveDownButton" to="." method="_on_move_down_button_pressed"]
 [connection signal="text_changed" from="Panel/MarginContainer/VBoxContainer/TaskDescription" to="." method="_on_task_description_text_changed"]
