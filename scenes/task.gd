@@ -26,7 +26,7 @@ func toggle_expand_panel():
 		task.custom_minimum_size.y += grow_size
 		panel.size.y += grow_size
 		task_description.visible = true
-		task_description.custom_minimum_size.y = grow_size # deliberately setto grow_size
+		task_description.custom_minimum_size.y = grow_size - 5 # deliberately set around grow_size
 	elif is_panel_expanded == true:
 		is_panel_expanded = false
 		task.custom_minimum_size.y -= grow_size
