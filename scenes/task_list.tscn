@@ -20,7 +20,7 @@ offset_bottom = 120.0
 [node name="TaskContainer" type="VBoxContainer" parent="CommonMarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/separation = 40
+theme_override_constants/separation = 45
 
 [node name="Task1" parent="CommonMarginContainer/TaskContainer" instance=ExtResource("1_uhejc")]
 layout_mode = 2
