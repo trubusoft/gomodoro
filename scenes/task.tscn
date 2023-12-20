@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://i3kxbci3lska"]
+[gd_scene load_steps=6 format=3 uid="uid://i3kxbci3lska"]
 
 [ext_resource type="Script" path="res://scenes/task.gd" id="1_eoqju"]
 [ext_resource type="Theme" uid="uid://crpdu1rms2y2i" path="res://assets/themes/check_box.tres" id="2_wdb3e"]
+[ext_resource type="Theme" uid="uid://benld3o77ayl2" path="res://assets/themes/line_edit.tres" id="3_qhryt"]
 [ext_resource type="Texture2D" uid="uid://bpmktspvbiw4c" path="res://assets/image/manuscript_icon.png" id="3_xtikf"]
 [ext_resource type="Theme" uid="uid://dw5g2ilnblo0" path="res://assets/themes/text_edit.tres" id="4_ff5y2"]
 
@@ -48,9 +49,17 @@ unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_wdb3e")
 
-[node name="TaskName" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="TaskName" type="LineEdit" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("3_qhryt")
 text = "Task Name"
+placeholder_text = "Insert task name ..."
+max_length = 30
+expand_to_text_length = true
+flat = true
 
 [node name="ContentIcon" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 visible = false
@@ -82,6 +91,7 @@ wrap_mode = 1
 [connection signal="mouse_entered" from="Panel" to="." method="_on_panel_mouse_entered"]
 [connection signal="mouse_exited" from="Panel" to="." method="_on_panel_mouse_exited"]
 [connection signal="toggled" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="gui_input" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/TaskName" to="." method="_on_task_name_gui_input"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/MoveUpButton" to="." method="_on_move_up_button_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/MoveDownButton" to="." method="_on_move_down_button_pressed"]
 [connection signal="text_changed" from="Panel/MarginContainer/VBoxContainer/TaskDescription" to="." method="_on_task_description_text_changed"]

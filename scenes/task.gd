@@ -10,6 +10,7 @@ signal move_down(node: Node, index: int)
 @onready var panel = %Panel
 @onready var margin_container = %MarginContainer
 @onready var check_box = %CheckBox
+@onready var task_name = %TaskName
 @onready var task_description = %TaskDescription
 @onready var content_icon = $Panel/MarginContainer/VBoxContainer/HBoxContainer/ContentIcon
 
@@ -41,6 +42,11 @@ func _on_check_box_toggled(toggled_on):
 func _on_panel_gui_input(_event):
 	if Input.is_action_just_released("left_click") and is_being_pointed:
 		toggle_expand_panel()
+
+
+func _on_task_name_gui_input(_event):
+	if Input.is_action_just_released("left_click"):
+		task_name.select_all()
 
 
 func _on_task_description_text_changed():
