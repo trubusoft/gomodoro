@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://hnceblfwslk0"]
+[gd_scene load_steps=5 format=3 uid="uid://hnceblfwslk0"]
 
 [ext_resource type="Theme" uid="uid://bwe26ukrmi3ab" path="res://assets/themes/task_list.tres" id="1_00im7"]
 [ext_resource type="PackedScene" uid="uid://i3kxbci3lska" path="res://scenes/task.tscn" id="1_uhejc"]
+[ext_resource type="Script" path="res://scenes/task_list.gd" id="2_i0854"]
 [ext_resource type="PackedScene" uid="uid://bccn6f3mmd31a" path="res://components/common_margin_container.tscn" id="2_mwuer"]
 
 [node name="TaskList" type="Control"]
@@ -10,44 +11,46 @@ anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
 theme = ExtResource("1_00im7")
+script = ExtResource("2_i0854")
 
 [node name="CommonMarginContainer" parent="." instance=ExtResource("2_mwuer")]
 layout_mode = 1
 offset_bottom = 120.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CommonMarginContainer"]
+[node name="TaskContainer" type="VBoxContainer" parent="CommonMarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="Task1" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
+[node name="Task1" parent="CommonMarginContainer/TaskContainer" instance=ExtResource("1_uhejc")]
 layout_mode = 2
 
-[node name="Task2" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
+[node name="Task2" parent="CommonMarginContainer/TaskContainer" instance=ExtResource("1_uhejc")]
 layout_mode = 2
 
-[node name="Task3" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
+[node name="Task3" parent="CommonMarginContainer/TaskContainer" instance=ExtResource("1_uhejc")]
 layout_mode = 2
 
-[node name="Task4" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
+[node name="Task4" parent="CommonMarginContainer/TaskContainer" instance=ExtResource("1_uhejc")]
 layout_mode = 2
 
-[node name="Task5" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
+[node name="Task5" parent="CommonMarginContainer/TaskContainer" instance=ExtResource("1_uhejc")]
 layout_mode = 2
 
-[node name="Task6" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
+[node name="Task6" parent="CommonMarginContainer/TaskContainer" instance=ExtResource("1_uhejc")]
 layout_mode = 2
 
-[node name="Task7" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
+[node name="Task7" parent="CommonMarginContainer/TaskContainer" instance=ExtResource("1_uhejc")]
 layout_mode = 2
 
-[node name="Task8" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
+[node name="Task8" parent="CommonMarginContainer/TaskContainer" instance=ExtResource("1_uhejc")]
 layout_mode = 2
 
-[node name="Task9" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
+[node name="Task9" parent="CommonMarginContainer/TaskContainer" instance=ExtResource("1_uhejc")]
 layout_mode = 2
 
-[node name="Task10" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
+[node name="Task10" parent="CommonMarginContainer/TaskContainer" instance=ExtResource("1_uhejc")]
 layout_mode = 2
 
-[node name="Task11" parent="CommonMarginContainer/VBoxContainer" instance=ExtResource("1_uhejc")]
+[node name="Task11" parent="CommonMarginContainer/TaskContainer" instance=ExtResource("1_uhejc")]
 layout_mode = 2
