@@ -30,7 +30,7 @@ func toggle_expand_panel():
 		task_description.visible = false
 
 
-func is_click(event) -> bool:
+func is_clicked_down(event) -> bool:
 	if event is InputEventMouseButton and event.button_index == 1 and event.pressed == true:
 		return true
 	return false
@@ -41,7 +41,7 @@ func _on_check_box_toggled(toggled_on):
 
 
 func _on_panel_gui_input(event):
-	if is_click(event):
+	if is_clicked_down(event):
 		toggle_expand_panel()
 
 
