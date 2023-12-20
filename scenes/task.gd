@@ -19,6 +19,9 @@ var is_panel_expanded = false
 var grow_size = 200
 
 var is_being_pointed: bool = false
+var is_being_dragged: bool = false
+var drag_and_drop_upper_bound = -10 # -10 from 0px
+var drag_and_drop_lower_bound = 50 # +10 from 40px (panel's minimum y size)
 
 
 func expand_panel():
@@ -43,13 +46,31 @@ func toggle_expand_panel():
 		shrink_panel()
 
 
+func handle_drag_and_drop():
+	is_being_dragged = true
+	
+	var local_mouse_y_position = get_local_mouse_position().y
+	
+	if local_mouse_y_position <= drag_and_drop_upper_bound and get_index() != 0:
+		emit_signal('move_up', self, get_index())
+	elif local_mouse_y_position >= drag_and_drop_lower_bound and get_index() != (get_parent().get_child_count() - 1):
+		emit_signal('move_down', self, get_index())
+
+
 func _on_check_box_toggled(toggled_on):
 	toggle_check.emit(toggled_on)
 
 
 func _on_panel_gui_input(_event):
-	if Input.is_action_just_released("left_click") and is_being_pointed:
+	if Input.is_action_pressed("left_click") and not is_being_pointed:
+		handle_drag_and_drop()
+
+	if Input.is_action_just_released("left_click") and is_being_pointed and not is_being_dragged:
 		toggle_expand_panel()
+	
+	# important to be placed here, so not to trigger when drag & drop is being released
+	if Input.is_action_just_released("left_click") and is_being_dragged:
+		is_being_dragged = false
 
 
 func _on_task_name_gui_input(_event):
